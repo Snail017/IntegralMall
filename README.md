@@ -1,2 +1,2 @@
-# -IntegralMall
+# IntegralMall
 小程序
