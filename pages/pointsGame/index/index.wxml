@@ -1,0 +1,25 @@
+<cu-custom isBack="{{false}}">
+ 	<view slot="content">积分游戏</view>
+</cu-custom>
+<view class="pointgame">
+    <image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600408689280952575-img_banner1.png"></image>
+    <view class="games">
+        <view bindtap="bindLinkTap" data-target="rotary">
+            <view>
+                <text>积分 \n 大转盘</text>
+                <text>转出超高倍积分</text>
+            </view>
+            <image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600408542299287399-img_rotary.png"></image>
+        </view>
+        <view bindtap="bindLinkTap" data-target="lottery">
+            <view>
+                <text>积分 \n 抽奖</text>
+                <text>快来拼手气！</text>
+            </view>
+            <image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600408637704187167-img_jifez.png"></image>
+        </view>
+    </view>
+</view>
+<!-- 微信授权 -->
+<empowerModal id="empowerModal" bind:empevent="onEmpowerData"></empowerModal>
+

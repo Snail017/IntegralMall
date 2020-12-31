@@ -1,0 +1,146 @@
+.clearfix:before,.clearfix:after {
+	display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both
+}
+.clearfix {
+    zoom: 1;
+}
+.cu-custom, .cu-custom .cu-bar {
+	background-color: #F3FAFC;
+}
+.back {
+    height: 259rpx;
+    background:linear-gradient(0deg,rgba(229,244,255,1),rgba(243,250,252,1));
+}
+.cards {
+    margin-top: -230rpx;
+    padding: 24rpx 0 20rpx;
+}
+.card_item {
+    position: relative;
+	width:680rpx;
+	height: auto;
+    margin: 20rpx auto 30rpx;
+    padding: 38rpx 22rpx;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 7rpx 37rpx 1rpx rgba(211,233,245,0.82);
+	border-radius:20rpx;
+}
+.con-top image {
+    float: left;
+    width: 136rpx;
+    height: 128rpx;
+}
+.top_c {
+    float: left;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 136rpx);
+}
+.top_c > view {
+    width: calc(100% - 120rpx);
+    padding-left: 19rpx;
+}
+.top_c > text {
+    width: 120rpx;
+    color: #9A9A9A;
+    text-align: right;
+    font-size: 28rpx;
+}
+.top_c .top_tit {
+    display: block;
+    padding: 5rpx  0 18rpx;
+    color: #000;
+    line-height: 50rpx;
+    font-size: 32rpx;
+}
+.top_c .top_ex {
+    display: block;
+    color: #9A9A9A;
+    font-size: 24rpx;
+}
+.con-top > text {
+    position: absolute;
+    top: 23rpx;
+    right: 23rpx;
+    color: #DB4D46;
+    font-size: 24rpx;
+}
+.con_fotter {
+    padding-top: 38rpx;
+}
+.fotter_l{
+    /* float: left; */
+    width:100%;
+    background-color: #F3FAFC;
+    margin-bottom: 30rpx;
+    border-radius: 10rpx;
+    padding: 20rpx;
+    display: flex;
+}
+.fotter_l>text:nth-of-type(2){
+    width: 450rpx;
+}
+.fotter_c {
+    float: left;
+    width: 1px;
+    height: 102rpx;
+    margin: 0 37rpx;
+    background-color:#eee;
+}
+.fotter_t text {
+    display: block;
+    color: #000;
+    line-height: 38rpx;
+    font-size: 26rpx;
+    word-break:break-all;
+}
+.fotter_t .t {
+    padding-bottom: 14rpx;
+    color: #767676;
+}
+.fotter_r {
+    /* float: left; */
+    padding-right: 18rpx;
+}
+.fotter_f {
+    float: right;
+    padding-top: 47rpx;
+}
+.fotter_f view {
+    color: #000;
+    font-size: 30rpx;
+}
+.fotter_f text {
+    color: #DB4D46;
+}
+.Nocard {
+    width:680rpx;
+    margin: -230rpx auto 0;
+    padding-top: 236rpx;
+    padding-bottom: calc(100% - 100px);
+    background:#fff;
+    box-shadow:0px 7rpx 37rpx 1rpx rgba(211,233,245,0.82);
+    border-radius:20rpx;
+}
+.Nocard image {
+    display: block;
+    width: 304rpx;
+    height: 197rpx;
+    margin: 0 auto 41rpx;
+}
+.Nocard text {
+    display: block;
+    /* margin: 0 auto; */
+    color: #899CA6;
+    text-align: center;
+    font-size: 28rpx;
+}
+.loadmore {
+    padding: 10rpx 0 50rpx;
+    color: #a0a0a0;
+    text-align: center;
+}

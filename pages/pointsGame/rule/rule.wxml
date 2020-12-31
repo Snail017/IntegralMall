@@ -1,0 +1,13 @@
+ <cu-custom isBack="{{true}}">
+ 	<view slot="content">活动规则</view>
+ </cu-custom>
+ <view class="st_rule">
+ 	<view class="title">活动对象</view>
+ 	<text>所有玩家</text>
+ 	<view class="title">活动内容</view>
+ 	<text>幸运大转盘，好礼等你来，投入9积分即可参与转盘抽奖，还有神秘盲盒，惊喜不断哦。</text>
+ 	<view class="title">活动细则</view>
+ 	<text>1、每人每天有10次机会，每次转动需投入9积分；活动期间多3次免费摇奖机会，活动结束后自动取消。</text>
+	<text>2、抽奖次数用完后可微信分享好友获得抽奖机会，每天最多可分享10次；</text>
+	<text>3、奖品设置：奖品多多，数量不限。</text>
+ </view>

@@ -1,0 +1,232 @@
+.clearfix:before,.clearfix:after {
+	display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both
+}
+.clearfix {
+    zoom: 1;
+}
+.cu-custom, .cu-custom .cu-bar {
+	background-color: #F3FAFC;
+}
+.bgimg_box {
+    position: relative;
+    height: 738rpx;
+}
+.bgimg_box > image {
+    width: 100%;
+    height: 738rpx;
+}
+.bgimg_box > view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 17rpx;
+}
+.rule_btn {
+    width: 100%;
+    margin-bottom: 485rpx;
+}
+.rule_btn text {
+    float: right;
+    width: 100rpx;
+    height: 54rpx;
+    border-radius: 27rpx 0 0 27rpx;
+    background-color: #2260FF;
+    color: #fff;
+    text-align: center;
+    line-height: 54rpx;
+    font-size: 28rpx;
+}
+.money {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 637rpx;
+    color: rgba(255, 255, 255, 1);
+    padding: 45rpx 0;
+    text-align: center;
+    background: linear-gradient(
+      91deg,
+      rgba(255, 67, 112, 1),
+      rgba(225, 37, 68, 1)
+    );
+    border-radius: 10rpx;
+}
+.money view {
+    float: left;
+    width: 49%;
+    text-align: center;
+}
+.money view:nth-child(2) {
+    position: relative;
+    width: 2%;
+}
+.money > view text:first-child {
+    display: block;
+    margin-bottom: 15rpx;
+    font-weight: bold;
+    font-size: 36rpx;
+}
+.money > view text:last-child {
+    display: block;
+    color: #ffd0db;
+    font-size: 30rpx;
+}
+.money > view icon {
+    position: absolute;
+    display: block;
+    width: 2rpx;
+    height: 76rpx;
+    bottom: 0;
+    background-color: rgba(218, 37, 75, 1);
+}
+.clrbg_box {
+    padding: 30rpx 0 47rpx;
+    background: linear-gradient(#ff4127, #fb0000);
+}
+.luck_draw {
+    position: relative;
+    width: 668rpx;
+    margin: 0 auto;
+    background:rgba(255,254,253,1);
+    box-shadow:-2rpx 14rpx 27rpx 3rpx rgba(255,66,62,0.48);
+    border-radius: 46rpx;
+}
+.luck_draw input {
+    float: left;
+    width: 503rpx;
+    height: 80rpx;
+    padding-left: 44rpx;
+    line-height: 80rpx;
+}
+.phcolor {
+    color: #FFAD9A;
+    font-size: 30rpx;
+}
+.luck_draw button[type='primary'] {
+    float: right;
+    width: 166rpx;
+    height: 80rpx;
+    padding: 0;
+    border: 0;
+    border-radius: 80rpx;
+    background: linear-gradient(to right, #fe5231, #fea060);
+    line-height: 80rpx;
+}
+.luck_draw button[disabled][type='primary'] {
+	background: linear-gradient(to right, #bebebe, #eee);
+	color: #fff;
+	box-shadow: none;
+}
+.cell_list {
+    width: 687rpx;
+    margin: 47rpx auto 0;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 20rpx;
+    color: #7F6741;
+    text-align: center;
+    font-size: 26rpx;
+}
+.cell_list > text {
+    display: block;
+    padding: 31rpx 0 27rpx 31rpx;
+    color: #4D2C14;
+    text-align: left;
+    font-size: 38rpx;
+}
+.card_head {
+    padding: rem(10) 0;
+    background-color: #FFEFD6;
+}
+.card_head text {
+    float: left;
+    width: 24%;
+    height: 52rpx;
+    line-height: 52rpx;
+}
+.card_head text:first-child {
+    width: 28%;
+}
+.card_head text:nth-child(2) {
+    width: 25%;
+}
+.card_head text:nth-child(3) {
+    width: 23%;
+}
+.cell_card > view {
+    float: left;
+    line-height: 80rpx;
+}
+.cell_card > view:first-child {
+    width: 28%;
+}
+.cell_card > view:nth-child(2) {
+    width: 25%;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-box-orient:vertical;
+    word-break:break-all;
+}
+.cell_card > view:nth-child(3) {
+    width: 23%;
+}
+.cell_card > view:nth-child(4) {
+    width: 24%;
+    font-weight: bold;
+}
+.card1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card1 image {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 8rpx;
+}
+.cell_card .st_up {
+    height: 50rpx;
+    margin-top: 15rpx;
+    background: linear-gradient(77deg,
+      rgba(255, 71, 30, 1),
+      rgba(255, 189, 29, 1)
+    );
+    border-radius: 22rpx;
+    color: #fff;
+    line-height: 50rpx;
+}
+.st_up::before {
+    content: "↑";
+    display: inline-block;
+}
+/* 规则弹框 */
+.rule_modal .content {
+    height: auto;
+    margin: 0 auto;
+    padding: 46rpx 0 20rpx;
+    color: #201F1F;
+    font-weight: bold;
+    font-size: 40rpx;
+}
+.rule_modal .text_con {
+    display: block;
+    text-align: left;
+    line-height: 60rpx;
+    font-size: 28rpx;
+}
+.rule_modal .cu-dialog {
+    background-color: #fff;
+}
+.rule_modal .cu-dialog > .padding-xl {
+    overflow: auto;
+    height: 600rpx;
+    margin-bottom: 40rpx;
+    padding: 20rpx 5% 0;
+    background-color: #fff;
+}

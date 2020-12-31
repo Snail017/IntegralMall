@@ -1,0 +1,89 @@
+<cu-custom isBack="{{true}}">
+	<view slot="content">确认订单</view>
+</cu-custom>
+<form bindsubmit="{{isClicked?'':'formSubmit'}}">
+	<scroll-view scroll-y class="confirm_order">
+		<view class="cu-list order_top menu-avatar">
+			<view class="cu-item">
+				<view class="img_p">
+					<image src="https://{{iconAddress}}"></image>
+				</view>
+				<view class="content">
+					<view>{{Title}}</view>
+					<view>{{Content}}</view>
+				</view>
+				<view class="action">
+					<view>X{{inputvalue}}</view>
+					<view>{{convertNum}}积分</view>
+				</view>
+			</view>
+		</view>
+		<view class="order_bot">
+			<view class="bot_list" wx:if="{{Category=='kfc'}}">
+				<view class="title kd_tit clearfix">
+					<text>门店地址</text>
+					<text bindtap="copyText" data-text="https://order.kfc.com.cn/mwos/store">https://order.kfc.com.cn/mwos/store</text>
+				</view>
+				<input name='ShopAddress' value="{{ShopAddress}}" placeholder="请输入门店地址" data-target="kdj" bindinput="bindinput">></input>
+			</view>
+			<view class="bot_list" wx:if="{{Category!='ecell'}}">
+				<view class="title">微信号</view>
+				<input name='WchatNo' value="{{WchatNo}}" placeholder="请输入微信号" data-target="xbk" bindinput="bindinput">></input>
+			</view>
+			<view class="bot_list" wx:if="{{Category=='ecell'}}">
+				<view class="title" bindtap="toStarbucks">以太坊钱包地址</view>
+					<textarea name='accountAddress' value="{{accountAddress}}" bindinput="bindTextArea" placeholder="请备注你的以太坊钱包地址" />
+				</view>
+			<view class="bot_list" wx:if="{{Category!='kfc'}}">
+				<view class="title">手机号</view>
+				<input name='phone' value="{{phone}}" placeholder="请输入手机号" data-target="qt" bindinput="bindinput">></input>
+			</view>
+			<view class="bot_list">
+				<view class="title">支付方式</view>
+				<view class="bot_integral">
+					<view>
+						<text class="text-black">积分</text>
+						<text class="text-grey">（可用积分: {{signPoint}}）</text>
+					</view>
+					<view>
+						<icon class="icon-small" type="success" color='#2054E1' wx-if="{{signPoint>=convertNum*inputvalue}}"></icon>
+						<icon class="no_icon" wx:else></icon>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+	<view class="fixed_bot">
+		<view>
+			<text>合计：</text>
+			<text>{{convertNum*inputvalue}}积分</text>
+		</view>
+		<button wx:if="{{Category=='kfc'}}" data-target="DialogModal" disabled="{{signPoint<convertNum*inputvalue||ShopAddress==''||WchatNo==''?true: false}}" form-type="submit">提交订单</button>
+		<button wx:elif="{{Category=='starbucks'}}" data-target="DialogModal" disabled="{{signPoint<convertNum*inputvalue||WchatNo==''||phone==''?true: false}}" form-type="submit">提交订单</button>
+		<button wx:else data-target="DialogModal" disabled="{{signPoint<convertNum*inputvalue||accountAddress==''||phone==''?true: false}}" form-type="submit">提交订单</button>
+	</view>
+</form>
+<!-- 提交订单成功弹框 -->
+<successModal id="successModal"></successModal>
+
+<!-- 提交订单 - 确认支付弹框 -->
+<!-- <view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+		<view>支付积分:40</view>
+		<view class="action" bindtap="hideModal">
+			<text class="cuIcon-close"></text>
+		</view>
+    </view>
+    <view class="padding-xl bg-white">
+		<text>请输入支付密码</text>
+		<view>
+			<block wx:for='{{dataSource}}' wx:key='this'>
+				<input type='number' bindtap='onTapFocus' type='{{showType}}' disabled value='{{item.initValue}}'></input>
+			</block>
+		</view>
+		<input type='number' maxlength='6' focus='{{isFocus}}' class='hidden-input' bindinput='mobileInput'></input>
+		<button bindtap="confirmPay">确认支付</button>
+    </view>
+  </view>
+</view> -->

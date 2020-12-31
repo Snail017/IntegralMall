@@ -1,0 +1,29 @@
+<!--component/empowerModal/empowerModal.wxml-->
+<!-- 微信授权 -->
+<view class="cu-modal empower_modal {{warrant?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white">
+			<view class="bar_img">
+				<image src="/images/icon_eceel.png"></image>
+			</view>
+		</view>
+		<view class="padding-xl bg-white">
+			<view>欢迎来到CellFun！</view>
+			<text>尽享积分兑换权益</text>
+		</view>
+		<view class="cu-bar btns bg-white">
+			<button class="cu-btn text-gray" bindtap="hideWarrant">取消</button>
+			<button class="cu-btn text-green" open-type="getUserInfo" bindtap="bins" bindgetuserinfo="bindgetuserinfo">微信授权</button>
+		</view>
+	</view>
+</view>
+<!-- 授权成功弹框 -->
+<view class="cu-modal success_modal {{modalName=='successModal'?'show':''}}">
+	<view class="cu-dialog">
+		<view class="padding-xl bg-white">
+			<image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600409212088964940-icon_chengg.png"></image>
+			<view>微信授权成功</view>
+			<button class="cu-btn text-gray" bindtap="hideModal">确定</button>
+		</view>
+	</view>
+</view>

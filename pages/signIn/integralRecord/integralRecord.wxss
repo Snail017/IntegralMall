@@ -1,0 +1,86 @@
+/* pages/signIn/integralRecord/integralRecord.wxss */
+.cu-custom {
+	background: #F3FAFC;
+	color: #333333;
+}
+.cu-custom, .cu-custom .cu-bar {
+	background-color: #F3FAFC;
+}
+.back_color {
+	width: 100%;
+	height:259rpx;
+	background:linear-gradient(0,#E5F4FF,#F3FAFC);
+}
+.inter_list {
+	margin-top: -200rpx;
+}
+.inter_month {
+	padding: 0 35rpx;
+}
+.inter_month > text {
+	display: block;
+	padding: 34rpx 0 30rpx;
+	color: #000;
+	font-weight: 550;
+	font-size: 36rpx;
+}
+.inter_month > view {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 24rpx;
+	padding: 32rpx 34rpx 32rpx 26rpx;
+	background:#fff;
+	box-shadow:0px 7rpx 37rpx 1rpx rgba(211,233,245,0.82);
+	border-radius:20rpx;
+}
+.inter_month > view > view {
+	color: #5F5F5F;
+	font-size: 26rpx;
+}
+.inter_month > view > view text {
+	display: block;
+}
+.inter_month > view > view text:first-child {
+	padding-bottom: 21rpx;
+	color: #000000;
+	font-size: 32rpx;
+}
+.inter_month > view > text {
+	font-weight: 550;
+	font-size: 44rpx;
+}
+.inter_month > view .t_blue {
+	color: #3479EC;
+}
+.inter_month > view .t_red {
+	color: #EC3445;
+}
+.Nocard {
+	width:680rpx;
+	margin: -30rpx auto 0;
+	padding-top: 236rpx;
+	padding-bottom: calc(100% - 100px);
+	background:#fff;
+	box-shadow:0px 7rpx 37rpx 1rpx rgba(211,233,245,0.82);
+	border-radius:20rpx;
+}
+.Nocard image {
+	display: block;
+	width: 304rpx;
+	height: 197rpx;
+	margin: 0 auto 41rpx;
+}
+.Nocard text {
+	display: block;
+	/* margin: 0 auto; */
+	color: #899CA6;
+	text-align: center;
+	font-size: 28rpx;
+}
+.loadmore {
+	padding: 10rpx 0 50rpx;
+	color: #a0a0a0;
+	text-align: center;
+}

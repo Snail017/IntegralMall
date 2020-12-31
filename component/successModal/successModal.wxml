@@ -1,0 +1,17 @@
+<!-- 签到成功/提交订单成功弹框 -->
+<view class="cu-modal success_modal {{modalName=='successModal'?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white">
+			<image src="/images/img_chengg.png" class="{{showName=='lottery'?'lottery_img':''}}" wx-if="{{showName=='lottery'}}"></image>
+			<image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600409533515524001-icon_qiandao1.png" wx:else></image>
+			<view class="tit" wx-if="{{showName=='lottery'}}">恭喜您获得</view>
+		</view>
+		<view class="padding-xl bg-white">
+			<text wx:if="{{Status==1}}">恭喜你成为今天签到的幸运儿，获得{{SignPoint}}积分奖励</text>
+			<text class="{{showName=='lottery'?'text-red':''}}" wx:else>{{showName=='signin'?'恭喜你，签到成功！获得'+ SignPoint +'积分':showName=='lottery'? lotteryPoint +'积分':'恭喜你，兑换成功！'}}</text>
+		</view>
+		<view class="hidemodal" bindtap="hideModal">
+			<image src="/images/icon_guanbi.png"></image>
+		</view>
+	</view>
+</view>

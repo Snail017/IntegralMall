@@ -1,0 +1,70 @@
+<cu-custom isBack="{{true}}">
+ 	<view slot="content">积分抽奖</view>
+</cu-custom>
+<view class="bgimg_box">
+    <image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600408876216670868-lottery_bg.png"></image>
+    <view>
+        <view class="rule_btn" bindtap="showModal" data-target="ruleModal1">
+            <text>规则</text>
+        </view>
+        <view class="money">
+            <view>
+                <text>{{signPoint}}</text>
+                <text>我的积分余额</text>
+            </view>
+            <view>
+                <icon></icon>
+            </view>
+            <view>
+                <text>{{MinUpPoint}}~{{MaxUpPoint}}</text>
+                <text>单次参与积分</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="clrbg_box">
+    <view class="luck_draw clearfix">
+        <input placeholder="若中奖，最高可获得{{Multiple==2?'2':'100'}}倍奖励" placeholder-class="phcolor" type="number" bindinput="getInput"></input>
+        <button type="primary" data-target="successModal" bindtap="PointDraw" disabled="{{getInput>signPoint||getInput==0||getInput==''}}">抽奖</button>
+    </view>
+    <view class="cell_list">
+        <text>中奖名单</text>
+        <view class="card_head clearfix">
+            <text>时间</text>
+            <text>玩家</text>
+            <text>参与积分</text>
+            <text>中奖积分</text>
+        </view>
+        <view class="cell_card clearfix" wx:for="{{luckylist}}" wx:key="ID">
+            <view class="card1">
+                <image src="/images/icon_xialian.png" wx-if="{{item.Status==1}}"></image>
+                <image src="/images/icon_kulian.png" wx-if="{{item.Status==2}}"></image>
+                <text>{{item.CreateTime}}</text>
+            </view>
+            <view>{{item.WchatName}}</view>
+            <view>{{item.UpPoint}}</view>
+            <view class="{{item.DownPoint>5000?'st_up':''}}">
+                <text>{{item.DownPoint==0?'无':item.DownPoint}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 规则弹框 -->
+<view class="cu-modal rule_modal {{modalName=='ruleModal1'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">幸运抽奖活动说明</view>
+            <view class="action" bindtap="hideModal">
+                <text class="cuIcon-close text-grey"></text>
+            </view>
+        </view>
+        <view class="padding-xl">
+            <view class="text_con">
+				<rich-text nodes="{{Rule}}"></rich-text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 获奖弹框 -->
+<successModal id="successModal"></successModal>

@@ -1,0 +1,57 @@
+page {
+    background-color: #fff;
+}
+.infos {
+	padding: 39rpx 35rpx;
+}
+.photo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 154rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+}
+.photo text {
+    color: #333;
+    font-size: 34rpx;
+}
+.photo image {
+    width: 114rpx;
+    height: 114rpx;
+    border-radius: 50%;
+}
+.bot_list {
+	height: 154rpx;
+	border-bottom: 1rpx solid #E5E5E5;
+}
+.bot_list .title {
+	padding: 40rpx 0 20rpx;
+	color: #333333;
+	line-height: 40rpx;
+	font-weight: bold;
+	font-size: 22rpx;
+}
+.title > text {
+	color: #F8253E;
+	font-size: 22rpx;
+}
+.bot_list textarea {
+	width: 100%;
+	height: 55rpx;
+}
+.fixed_bot > button:not([size='mini']) {
+	width:259rpx;
+	height:76rpx;
+	margin: 23rpx auto;
+	background:rgba(32,84,225,1);
+	box-shadow:2rpx 9rpx 8rpx 0px rgba(55,121,255,0.25);
+	border-radius:38rpx;
+	color: #fff;
+	font-weight: normal;
+	font-size: 30rpx;
+}
+.fixed_bot > button[disabled]:not([type]) {
+	background-color: #bebebe;
+	color: #fff;
+	box-shadow: none;
+}

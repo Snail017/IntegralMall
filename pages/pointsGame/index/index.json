@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "empowerModal": "../../../component/empowerModal/empowerModal"
+    }
+}

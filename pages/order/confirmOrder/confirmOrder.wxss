@@ -1,0 +1,208 @@
+.clearfix:before,.clearfix:after {
+	display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both
+}
+.clearfix {
+    zoom: 1;
+}
+.cu-custom, .cu-custom .cu-bar {
+	background-color: #F3FAFC;
+}
+.order_top {
+	padding: 52rpx 35rpx 0;
+	background:linear-gradient(0deg,#E5F4FF,#F3FAFC);
+}
+.cu-list.menu-avatar {
+	overflow: visible;
+}
+.cu-list.menu-avatar>.cu-item {
+	height: 160rpx;
+	padding-right: 21rpx;
+	box-shadow:0px 7px 30px 1px rgba(211,233,245,0.82);
+	border-radius:20rpx;
+}
+.img_p {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 160rpx;
+	height: 160rpx;
+	border-radius:20rpx 0 0 20rpx;
+	/* background-color: #15203B; */
+}
+.img_p image {
+	display: block;
+	width: 124rpx;
+	height: 124rpx;
+	margin: 18rpx auto 0;
+}
+.cu-list.menu-avatar>.cu-item .content {
+	width: calc(100% - 185rpx - 120rpx - 21rpx);
+	left: 185rpx;
+}
+.cu-list.menu-avatar>.cu-item .content>view:first-child {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	margin-bottom: 16rpx;
+	color: #151618;
+	font-weight: bold;
+	font-size: 32rpx;
+}
+.cu-list.menu-avatar>.cu-item .content>view:last-child {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	color: #9A9A9A;
+	font-size: 24rpx;
+}
+.cu-list.menu-avatar>.cu-item .action {
+	width: auto;
+}
+.cu-list.menu-avatar>.cu-item .action>view:first-child {
+	padding-bottom: 24rpx;
+	color: #838383;
+	text-align: right;
+	font-size: 24rpx;
+}
+.cu-list.menu-avatar>.cu-item .action>view:last-child {
+	color: #2054E1;
+	font-size: 32rpx;
+}
+.order_bot {
+	padding: 39rpx 35rpx;
+}
+.bot_list {
+	height: 180rpx;
+	margin-bottom: 21rpx;
+	padding: 0 23rpx;
+	border-radius:20rpx;
+	background-color: #fff;
+}
+.bot_list .title {
+	padding: 30rpx 0 26rpx;
+	color: #151618;
+	line-height: 40rpx;
+	font-weight: bold;
+	font-size: 32rpx;
+}
+.bot_list .title.kd_tit text {
+	float: left;
+}
+.bot_list .title.kd_tit text:last-child {
+	padding-left: 20rpx;
+	color: #999;
+	font-weight: normal;
+	font-size: 26rpx;
+}
+.bot_list textarea {
+	width: 100%;
+	height: 78rpx;
+}
+.bot_integral {
+	display: flex;
+	justify-content: space-between;
+}
+.no_icon {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #CCDAFF;
+}
+.fixed_bot {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 120rpx;
+	padding: 0 28rpx 0 37rpx;
+	background-color: #fff;
+}
+.fixed_bot > view {
+	line-height: 120rpx;
+	color: #000;
+	font-weight: bold;
+	font-size: 34rpx;
+}
+.fixed_bot > view text:last-child {
+	color: #2054E1;
+	font-size: 40rpx;
+}
+.fixed_bot > button:not([size='mini']) {
+	width:259rpx;
+	height:76rpx;
+	margin: 23rpx 0 0;
+	background:rgba(32,84,225,1);
+	box-shadow:2rpx 9rpx 8rpx 0px rgba(55,121,255,0.25);
+	border-radius:38rpx;
+	color: #fff;
+	font-weight: normal;
+	font-size: 30rpx;
+}
+.fixed_bot > button[disabled]:not([type]) {
+	background-color: #bebebe;
+	color: #fff;
+	box-shadow: none;
+}
+
+
+/* 确认支付弹框 */
+/* .cu-modal.bottom-modal .cu-dialog {
+	border-radius: 40rpx 40rpx 0 0;
+}
+.cu-modal .cu-bar > view:first-child {
+	padding: 48rpx 0 0 54rpx;
+	color: #151618;
+	font-weight: 550;
+	font-size: 40rpx;
+}
+.padding-xl > text {
+	display: block;
+	padding-bottom: 35rpx;
+	color: #858585;
+	text-align: left;
+	font-size: 28rpx;
+}
+.padding-xl > view {
+	display: flex;
+	justify-content: start;
+}
+.padding-xl input {
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 34rpx;
+	border: 1rpx solid #E5E5E5;
+}
+.padding-xl input:last-child {
+	margin-right: 0;
+}
+.padding-xl .hidden-input{
+  width: 0;
+	height: 0;
+	border: 0;
+}
+.padding-xl > button:not([size='mini']) {
+	width: 100%;
+	height: 90rpx;
+	margin-top: 79rpx;
+	padding: 0;
+	border-radius: 10rpx;
+	background-color: #2054E1;
+	color: #fff;
+	line-height: 90rpx;
+	font-weight: normal;
+	font-size: 34rpx;
+} */

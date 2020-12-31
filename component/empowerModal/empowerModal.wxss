@@ -1,0 +1,76 @@
+/* 弹框 */
+@import "../../plugin/colorui/main.wxss";/**引入colorUI**/
+@import "../../plugin/colorui/icon.wxss";/**引入colorUI**/
+.cu-dialog {
+	padding-top: 70rpx;
+	background-color: transparent;
+}
+.cu-dialog .cu-bar {
+	border-radius: 20rpx 20rpx 0 0;
+}
+.empower_modal .padding-xl {
+	padding-top: 30rpx;
+}
+.empower_modal .padding-xl > view, .success_modal .padding-xl view {
+	color: #000;
+	font-weight: 550;
+	font-size: 38rpx;
+}
+.empower_modal .padding-xl > view {
+	padding-bottom: 29rpx;
+}
+.empower_modal .padding-xl > text {
+	color: #8E8E8E;
+	font-size: 30rpx;
+}
+.empower_modal .btns {
+	border-radius: 0 0 20rpx 20rpx;
+}
+.btns .cu-btn {
+	margin: 0;
+	background-color: #fff;
+	font-weight: normal;
+	font-size: 30rpx;
+}
+.cu-bar .bar_img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width:140rpx;
+	height:140rpx;
+	margin: -70rpx auto 25rpx;
+	background:rgba(255,255,255,1);
+	border:1px solid rgba(238,238,238,1);
+	border-radius:25rpx;
+}
+.empower_modal .bar_img {
+	border:1px solid #15203B;
+	background-color: #15203B;
+}
+.cu-bar image {
+	width: 110rpx;
+	height: 110rpx;
+}
+.cu-bar .tit {
+	margin: 0 auto;
+	color: #000;
+	text-align: center;
+	font-size: 40rpx;
+}
+.success_modal .padding-xl {
+	border-radius: 20rpx;
+}
+.success_modal image {
+	width: 122rpx;
+	height: 112rpx;
+}
+.success_modal .padding-xl view {
+	padding-top: 37rpx;
+}
+.success_modal .padding-xl > button {
+	margin-top: 81rpx;
+	background-color: #fff;
+	color: #3479EC;
+	font-size: 30rpx;
+}

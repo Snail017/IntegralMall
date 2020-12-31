@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/pointsGame/index/index",
+        "pages/my/personalCenter/personalCenter",
+        "pages/order/myOrders/myOrders",
+        "pages/order/confirmOrder/confirmOrder",
+        "pages/signIn/integralRecord/integralRecord",
+        "pages/pointsGame/rotary/rotary",
+        "pages/pointsGame/rule/rule",
+        "pages/pointsGame/lottery/lottery",
+        "pages/my/info/info",
+        "pages/outlink/outlink"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "color": "#656666",
+        "selectedColor": "#198cff",
+        "borderStyle": "white",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "iconPath": "/images/icon_shouye_l_cur.png",
+                "selectedIconPath": "/images/icon_shouye_l.png",
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "iconPath": "/images/icon_chouj.png",
+                "selectedIconPath": "/images/icon_chouj.png",
+                "pagePath": "pages/pointsGame/index/index",
+                "text": "积分游戏"
+            },
+            {
+                "iconPath": "/images/icon_wod_l_cur.png",
+                "selectedIconPath": "/images/icon_wod_l.png",
+                "pagePath": "pages/my/personalCenter/personalCenter",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "cu-custom": "/plugin/colorui/components/cu-custom"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

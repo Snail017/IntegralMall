@@ -1,0 +1,50 @@
+<cu-custom isHome="{{true}}">
+    <view slot="content">我的订单</view>
+</cu-custom>
+<view>
+	<view class="back"></view>
+	<view class="cards" wx:if='{{!cardLength}}'>
+		<view class="card_item clearfix" wx:for="{{cardData}}" wx:key="ID">
+			<view class="con-top clearfix">
+				<image src="https://{{item.IconAddress}}"></image>
+				<view class="top_c">
+					<view>
+						<text class="top_tit">{{item.Goods}}</text>
+						<text class="top_ex">套餐</text>
+					</view>
+					<text>x{{item.Num}}</text>
+				</view>
+				<!-- <text>待使用</text> -->
+			</view>
+			<view class="con_fotter">
+				<view class="fotter_t clearfix">
+					<view class="fotter_l">
+						<text class="t" >{{item.Category=='kfc'?'门店地址：':item.Category=='starbucks'?'微信号':'以太坊地址:'}}</text>
+						<text selectable='true'>{{item.Category=='kfc'?item.ShopAddress:item.Category=='starbucks'?item.WchatNo:item.AccountAddress}}</text>
+					</view>
+					<!-- <view class="fotter_c"></view> -->
+					<view class="fotter_l">
+						<text class="t">{{item.Category=='kfc'?'微信号:':'电话:'}}</text>
+						<text selectable='true'>{{item.Category=='kfc'?item.WchatNo:item.Phone}}</text>
+					</view>
+				</view>
+				<view class="fotter_f">
+					<view>合计总额：
+						<text>{{item.Num*item.Point}}积分</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="loadmore loadmore_line" hidden='{{!isShowNoDatasTips}}'>
+			<view class="loadmore_tips"> - 我可是有底线的 - </view>
+		</view>
+	</view>
+	<view class='Nocard' wx:else>
+		<image src="/images/img_kongzhuangt.png"></image>
+		<text>暂无订单～</text>
+	</view>
+	<!-- <view class='loadmore' hidden='{{isShowLoadmore}}'>
+      <view class='loading'></view>
+      <view class='loadmore_tips'>正在加载</view>
+    </view> -->
+</view>

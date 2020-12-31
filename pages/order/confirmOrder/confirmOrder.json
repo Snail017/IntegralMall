@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "successModal": "../../component/successModal/successModal"
+  }
+}

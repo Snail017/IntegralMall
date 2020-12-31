@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "successModal": "../../../component/successModal/successModal"
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,54 @@
+/* component/successModal/successModal.wxss */
+@import "../../plugin/colorui/main.wxss";/**引入colorUI**/
+@import "../../plugin/colorui/icon.wxss";/**引入colorUI**/
+/* 弹框 */
+.cu-dialog {
+	padding-top: 100rpx;
+	background-color: transparent;
+}
+.success_modal .cu-bar {
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 20rpx 20rpx 0 0;
+}
+.cu-bar image {
+	width: 245rpx;
+	height: 243rpx;
+	margin: -100rpx auto 0
+}
+.cu-bar .lottery_img {
+	width: 292rpx;
+	height: 205rpx;
+}
+.cu-bar .tit {
+	margin: 0 auto;
+	color: #000;
+    text-align: center;
+    font-weight: bold;
+	font-size: 38rpx;
+}
+.success_modal .padding-xl {
+	padding: 0 0 120rpx;
+	border-radius: 0 0 20rpx 20rpx;
+}
+.success_modal .padding-xl text {
+	display: block;
+	padding:0 30rpx;
+	color: #000;
+	line-height: 58rpx;
+	font-size: 38rpx;
+}
+.success_modal .padding-xl .text-red {
+	padding-top: 15rpx;
+	color: #FF2C1E;
+	font-size: 44rpx;
+}
+.success_modal .hidemodal {
+	margin: 53rpx auto 0;
+}
+.success_modal .hidemodal image {
+	width: 62rpx;
+	height: 62rpx;
+}
+
+

@@ -1,0 +1,23 @@
+.cu-custom, .cu-custom .cu-bar {
+	background-color: #fff;
+}
+page{
+  height: 100%;
+}
+.st_rule {
+  min-height: calc(100% - 60px);
+  background-color: #FFF0CB;
+  padding: 0 30rpx;
+  font-size: 34rpx;
+}
+.title {
+  font-size: 36rpx;
+  font-weight: 600;
+  padding: 50rpx 0 30rpx;
+  color: rgba(0, 0, 0, 1);
+  line-height: 36rpx;
+}
+text {
+  display: block;
+  line-height: 60rpx;
+}

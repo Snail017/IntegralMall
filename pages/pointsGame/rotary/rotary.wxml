@@ -1,0 +1,126 @@
+<cu-custom isBack="{{true}}">
+ 	<view slot="content">积分大转盘</view>
+</cu-custom>
+
+<view class="st_body">
+ 	<view class="back"></view>
+ 	<view class="st_top">
+ 		<view class="st_parleft">
+ 			<image src="/images/jinbi.png"> </image>
+ 			<text>积分余额:{{signPoint}}</text>
+ 		</view>
+ 		<text class="st_parright" bindtap="showModel" data-type="record">抽奖记录</text>
+ 	</view>
+ 	<view id="luckdraw_box">
+ 		<view id="luckdraw_back" style='transform:rotate({{ change_angle}}deg)' mode="scaleToFill">
+ 			<image class="st-bg" src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600408829369884894-img_p.png"></image>
+ 		</view>
+ 		<view id="luckdraw_pointer">
+ 			<image mode="scaleToFill" style='transform:rotate({{ start_angle}}deg)' src="/images/icon_zx@2x.png"></image>
+ 		</view>
+ 	</view>
+ 	<image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600409769069446623-img_diz.png" class="st_diz"></image>
+ 	<image src="/images/btn_kais@2x.png" bindtap='luckDrawStart' class="btn_start"></image>
+	<text class="st_text" wx:if="{{SetFreeTimes>0}}">活动期间有3次免费抽奖机会</text>
+ 	<text class="st_text">今日游戏次数剩余{{time}}次</text>
+	<!-- <text class="st_text">其中免费次数剩余{{FreeTimes}}次</text> -->
+ 	<view class="st_rule" bindtap="toRule">
+ 		<image src="/images/icon_guiz@2x.png"></image>
+ 		<text>规则</text>
+ 	</view>
+</view>
+<!-- 弹框 -->
+<view class="cu-modal rule_modal {{modalName!=null?'show':''}}">
+	<view class="cu-dialog" wx:if="{{modalName!='share'&&modalName!='weixin'}}">
+		<view class="cu_winning">
+			<!-- //盲盒 -->
+			<view class="st_caidan" wx:if="{{modalName=='manghe'}}">
+				<image src="/images/img_qiu@2x.png"></image>
+				<view>
+					<text>{{result_val.BonusPoint}}</text>积分
+				</view>
+				<button>积分马上入账</button>
+			</view>
+			<view class="st_bei" wx:if="{{modalName=='jifen'}}">
+				<image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600409025577204693-img_zj.png"></image>
+				<view class="st_bei_txt">
+					<view>{{result_val.Awards}}倍</view>
+					<view>{{result_val.BonusPoint}}积分</view>
+					<view>马上入账</view>
+				</view>
+			</view>
+		</view>
+		<view class="st_record" wx:if="{{modalName=='record'}}">
+			<image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600409967471440684-img_cjjl.png"></image>
+			<view class="st_table_body">
+				<text class="title">抽奖记录</text>
+				<view class="st_record_top">
+					<text>当日下注积分：{{allUsedPoint}}</text>
+					<text>当日中奖积分：{{allBonusPoint}}</text>
+				</view>
+				<view class="st_table">
+					<view>
+						<text>投注</text>
+						<text>中奖</text>
+						<text>时间</text>
+					</view>
+					<view class="st_table_box">
+						<view wx:for="{{record_list}}" wx:key="ID">
+							<text>{{item.UsedPoint}}</text>
+							<text style="color:{{item.BonusPoint==0?'#767676':'#000'}}">{{item.BonusPoint>0?item.BonusPoint+'积分':'未中奖'}}</text>
+							<text>{{item.Date}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="note">可查一个月内的抽奖明细，每天可抽奖10次，分享后最多可再多10次抽奖机会哦。活动期间每天可多3次免费抽奖机会，活动结束后自动取消。</view>
+			</view>
+		</view>
+		<view class="hidemodal" bindtap="hideModal" wx:if="{{modalName=='manghe'||modalName=='jifen'||modalName=='record'}}">
+			<image src="/images/icon_guanbi.png"></image>
+		</view>
+	</view>
+	<view class="cu-dialog cu-imgtop" wx:if="{{modalName=='share'}}">
+		<image src="/images/img_qiu@2x_1.png" class="st_share_headimg"></image>
+		<view class="st_share_box bg-white" style="position:relative;padding-top:140rpx;">
+			<view class="title3">今日抽奖次数已用完，</view>
+			<view class="title3">分享给朋友可多一次抽奖机会～</view>
+			<view class="title4">每天最多可以分享10次</view>
+			<view class="st_share_btn" bindtap="showModel" data-type='weixin'>分享</view>
+			<view class="action" bindtap="hideModal" wx:if="{{modalName=='share'}}">
+				<text class="cuIcon-close"></text>
+			</view>
+		</view>
+	</view>
+	<!-- <view class="cu-dialog bg-white" wx:if="{{false}}">
+		<view class="st_share_box">
+			<view class="title1">把好心情、好运气</view>
+			<view class="title2">分享给朋友吧！</view>
+			<image src="/images/img_xiaorr@2x.png" class="st_share_img"></image>
+			<view class="action" bindtap="hideModal" wx:if="{{modalName=='share'}}">
+				<text class="cuIcon-close"></text>
+			</view>
+			<view class="st_share_btn" bindtap="showModel" data-type='weixin'>立即分享</view>
+		</view>
+	</view> -->
+</view>
+<view class="cu-modal exchange_modal bottom-modal {{modalName=='weixin'?' show ':''}}">
+	<view class="cu-dialog ">
+		<view class="bg-white">
+			<view class="padding-xl ">
+				<text class="st_title">分享到</text>
+				<view class="st_share">
+					<button open-type="share" catchtap="onShareAppMessage">
+						<image src="/images/icon_wx@2x.png"></image>
+						<text class="st_type_name">微信</text>
+					</button>
+					<!-- <view bindtap="onMenuShareTimeline">
+					<image src="/images/icon_pyq@2x.png"></image>
+					<text>朋友圈</text>
+				</view> -->
+				</view>
+			</view>
+			<view class="btn_cancel" bindtap="hideModal">取消</view>
+		</view>
+
+	</view>
+</view>

@@ -1,0 +1,33 @@
+/* pages/pointsGame/index/index.wxss */
+.pointgame > image {
+    width: 100%;
+    height: 230rpx;
+}
+.games > view {
+    position: relative;
+    width: 96%;
+    margin: 0 auto;
+}
+.games > view > view {
+    position: absolute;
+    top: 0;
+    left: 46rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330rpx;
+    z-index: 1000;
+}
+.games > view text {
+    display: block;
+    color: #fff;
+    font-size: 54rpx;
+    line-height: 70rpx;
+}
+.games > view text:last-child {
+    font-size: 30rpx;
+}
+.games > view image {
+    width: 100%;
+    height: 330rpx;
+}

@@ -1,0 +1,30 @@
+<cu-custom isBack="{{true}}">
+    <view slot="content">个人信息</view>
+</cu-custom>
+<form bindsubmit="{{isClicked?'formSubmit':''}}">
+    <view class="infos">
+        <view class="photo">
+            <text>头像</text>
+            <image src="{{avatarUrl}}"></image>
+        </view>
+        <view class="bot_list">
+            <view class="title">手机号 <text>*</text></view>
+            <input name='Phone' value="{{Phone}}" placeholder="请输入手机号" data-target="phone" bindinput="bindinput">></input>
+        </view>
+        <view class="bot_list">
+            <view class="title">微信号 <text>*</text></view>
+            <input name='WchatName' value="{{WchatName}}" placeholder="请输入微信号" data-target="wchatname" bindinput="bindinput">></input>
+        </view>
+        <view class="bot_list">
+            <view class="title">姓名<text>*</text></view>
+            <input name='Name' value="{{Name}}" placeholder="请输入姓名" data-target="name" bindinput="bindinput">></input>
+        </view>
+        <view class="bot_list">
+            <view class="title" bindtap="toStarbucks">以太坊地址 <text>*</text></view>
+            <textarea name='Address' value="{{Address}}" bindinput="bindTextArea" placeholder="请备注你的以太坊钱包" />
+        </view>
+    </view>
+	<view class="fixed_bot">
+		<button form-type="submit" disabled="{{WchatName==''||Phone==''||Name==''||Address==''? true : false}}">保存</button>
+	</view>
+</form>

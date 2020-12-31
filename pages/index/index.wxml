@@ -1,0 +1,147 @@
+<cu-custom isBack="{{false}}">
+    <view slot="content">积分商城</view>
+</cu-custom>
+<view class="home" style="background:url('https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600408083746749957-img_toubu.png') no-repeat;background-size: 100%;">
+	<view class="home_top">
+		<!-- 公告 -->
+		<view class="notice">
+			<image src="/images/icon_gongg.png"></image>
+			<!-- <text>Dapp上线签到功能啦，快绑定imToken地址，领取积分。</text> -->
+			<view class="notice_box">
+				<view class='content-box'>
+					<view class='content-text' animation="{{animationData}}">
+						<text id="text">{{text}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="qd_img">
+			<image src="/images/icon_yjqiandao.png" wx-if="{{alerdySign}}"></image>
+			<image src="/images/icon_qd.png" bindtap="{{isClicked?'':'getInSign'}}" data-target="successModal" wx:else></image>
+		</view>
+	</view>
+	<swiper class="banner-swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#8799a3" indicator-active-color="#0081ff" wx-if="{{bannerList.length>0}}">
+		<swiper-item wx:for="{{bannerList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+			<view class="swiper-item" data-target="bannerModal" data-index="{{index}}" data-type="{{item.Type}}" data-link="{{item.Link}}" bindtap="showModal">
+				<image src="https://{{item.IconLink}}"></image>
+			</view>
+		</swiper-item>
+	</swiper>
+	<view class="cards">
+		<view class="card_item clearfix" wx:for="{{cardData}}" wx:key="ID">
+			<view class="card_img">
+				<image src="https://{{item.IconAddress}}"></image>
+			</view>
+			<view class="card_con">
+				<view class="con_tit">{{item.Title}}</view>
+				<text selectable="true" class="con">{{item.Content}}</text>
+				<view class="con_fotter">
+					<view class="fotter_tag">
+						<image src="/images/icon_jifen.png"></image>
+						{{item.Point}}
+					</view>
+					<button class="cu-btn round"  bindtap="showModal" data-target="bottomModal" data-index="{{index}}" data-type="{{item.Category}}">抢兑</button>
+					<text bindtap="showModal" data-target="DialogModal1" data-index="{{index}}">活动规则</text>
+				</view>
+			</view>
+		</view>
+		<view class="loadmore loadmore_line" wx:if='{{isShowNoDatasTips&&!cardLength}}'>
+			<view class="loadmore_tips"> - 我可是有底线的 - </view>
+		</view>
+	</view>
+	<view class='Nocard' wx:if='{{cardLength}}'>
+		<image src="/images/img_kongzhuangt.png"></image>
+		<text>暂无商品信息～</text>
+	</view>
+</view>
+<!-- 领取新客福利 -->
+<view class="fixed_img1">
+	<image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600409166047709683-icon_xinkefl.png"  data-target="singkek" bindtap="GetUserWelfare"></image>
+</view>
+<!-- banner详情弹框 -->
+<view class="cu-modal bottom-modal banner_modal {{modalName=='bannerModal'?'show':''}}">
+    <view class="cu-dialog">
+		<view class="bar_top">
+			<view class="tit">{{bannerList[bannerIndex].Title}}</view>
+			<view class="action" bindtap="hideModal">
+				<text class="cuIcon-close"></text>
+			</view>
+		</view>
+		<view class="padding-xl bg-white">
+			<image src="https://{{bannerList[bannerIndex].IconLink}}"></image>
+			<rich-text selectable="true"  nodes="{{bannerList[bannerIndex].Text}}"></rich-text>
+			<view>
+				<text selectable="true">{{bannerList[bannerIndex].Link}}</text>
+				<image src="/images/copy.png" bindtap="copyText" data-text="{{bannerList[bannerIndex].Link}}" wx-if="{{bannerList[bannerIndex].Link!=''}}"></image>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 活动细则弹框 -->
+<view class="cu-modal rule_modal {{modalName=='DialogModal1'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view class="bar_img">
+                <image src="https://{{cardData[modalIndex].IconAddress}}"></image>
+            </view>
+            <view class="tit">{{cardData[modalIndex].Title}}</view>
+        </view>
+        <view class="padding-xl bg-white">
+            <view class="text_con">
+				<rich-text nodes="{{cardData[modalIndex].Rule}}"></rich-text>
+            </view>
+        </view>
+        <view class="hidemodal" bindtap="hideModal">
+            <image src="/images/icon_guanbi.png"></image>
+        </view>
+    </view>
+</view>
+<!-- 抢兑弹框 -->
+<view class="cu-modal bottom-modal exchange_modal {{modalName=='bottomModal'?'show':''}}">
+    <view class="cu-dialog">
+		<view class="bar_top">
+			<view class="img_con bg-white">
+				<view class="bar_img">
+					<image src="https://{{cardData[modalIndex].IconAddress}}"></image>
+				</view>
+				<view class="tit">{{cardData[modalIndex].Title}}</view>
+			</view>
+			<view class="action" bindtap="hideModal">
+				<text class="cuIcon-close"></text>
+			</view>
+		</view>
+		<view class="padding-xl bg-white">
+			<text selectable='true' wx-if="{{cardData[modalIndex].Category=='ecell'}}">此商品仅为会员钱包内的积分兑换eCell币用，下单请务必备注以太坊钱包地址和您的手机号</text>
+			<text selectable='true' wx:else bindtap="copyText" data-text="兑换此券添加微信LY-MaJiang 或18063778988">{{cardData[modalIndex].Content}}</text>
+			<view class="numbers">
+				<text>数量</text>
+				<view class="number_c">
+					<button bindtap="clickCut" data-type="{{cardData[modalIndex].Category}}">-</button>
+					<input type="number" placeholder="" value="{{inputExcelValue}}" bindinput="bindinput" cursor-spacing="80" wx-if="{{cardData[modalIndex].Category=='ecell'}}" data-type="ecell"></input>
+					<input type="number" placeholder="" value="{{inputValue}}" bindinput="bindinput" cursor-spacing="80" wx:else></input>
+					<button bindtap="clickAdd" data-type="{{cardData[modalIndex].Category}}">+</button>
+				</view>
+			</view>
+			<button bindtap="bindLinkTap" data-target="confirmOrder" data-index="{{modalIndex}}" disabled="{{inputExcelValue<800?true:false}}" wx-if="{{cardData[modalIndex].Category=='ecell'}}">兑换</button>
+			<button bindtap="bindLinkTap" data-target="confirmOrder" data-index="{{modalIndex}}" disabled="{{inputValue<1?true:false}}" wx:else>兑换</button>
+		</view>
+	</view>
+</view>
+<!-- 领取新客福利弹窗 -->
+<view class="cu-modal singkek_modal {{modalName=='singkek'?'show':''}}}}">
+    <view class="cu-dialog">
+        <view class="padding-xl bg-white">
+			<image src="https://ningshui-message.oss-cn-beijing.aliyuncs.com/1600409212088964940-icon_chengg.png"></image>
+			<text>小助理微信已复制成功！</text>
+			<text>入群领新客福利{{Welfare}}</text>
+			<view class="action">
+                <text bindtap="hideModal">知道了</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 微信授权 -->
+<empowerModal id="empowerModal" bind:empevent="onEmpowerData"></empowerModal>
+<!-- 签到成功弹框 -->
+<successModal id="successModal"></successModal>

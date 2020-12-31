@@ -1,0 +1,22 @@
+<!--pages/signIn/integralRecord/integralRecord.wxml-->
+<cu-custom isBack="{{true}}">
+    <view slot="content">积分记录</view>
+</cu-custom>
+<view class="back_color"></view>
+<view class="inter_list">
+	<view class="inter_month">
+		<view wx:for="{{signRecordData}}" wx:key="ID">
+			<view>
+				<text>{{item.Event}}</text>
+				<text>{{item.t}}</text>
+			</view>
+			<text class="t_blue"  wx:if="{{item.Category==1}}">+{{item.Point}}</text>
+			<text class="t_red" wx:else>{{item.Point}}</text>
+		</view>
+	</view>
+</view>
+<view class='Nocard' wx:if='{{cardLength}}'>
+	<image src="/images/img_kongzhuangt.png"></image>
+	<text>暂无积分记录～</text>
+</view>
+
